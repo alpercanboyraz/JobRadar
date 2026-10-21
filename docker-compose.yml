@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    container_name: jobradar-postgres
+    environment:
+      POSTGRES_DB: jobradar
+      POSTGRES_USER: jobradar
+      POSTGRES_PASSWORD: jobradar_dev   # sadece lokal geliştirme için
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
